@@ -4,12 +4,12 @@ down service:
 up service: 
   cd {{service}} && docker compose up -d
 
-setup-auto-update:
+auto-update:
   #!/usr/bin/env bash
   set -e
   REPO_ROOT="$(pwd)"
   UPDATE_SCRIPT_ABS="$REPO_ROOT/scripts/auto-update.sh"
-  
+
   CRON_LOG="/var/log/auto-update.log"
   CRON_CMD="0 */6 * * * $UPDATE_SCRIPT_ABS >> $CRON_LOG 2>&1"
   
