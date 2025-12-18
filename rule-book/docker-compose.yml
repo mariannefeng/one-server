@@ -1,5 +1,3 @@
-version: "3.8"
-
 services:
   rule-book-backend:
     image: ghcr.io/mariannefeng/rule-book-backend:main-c12e4f7
