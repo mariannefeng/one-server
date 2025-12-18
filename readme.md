@@ -7,4 +7,4 @@
 - deploy high five me backend at api.high-five-me.com
 - buy high-five-me domain
 - get caddy setup
-- (maybe) setup watchtower?
+- setup auto update
