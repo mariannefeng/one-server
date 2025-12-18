@@ -1,6 +1,6 @@
 services:
   rule-book-backend:
-    image: ghcr.io/mariannefeng/rule-book-backend:main-c12e4f7
+    image: ghcr.io/mariannefeng/rule-book-backend:latest
     container_name: rule-book-backend
     restart: unless-stopped
     expose:
