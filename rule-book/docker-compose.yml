@@ -1,0 +1,32 @@
+version: "3.8"
+
+services:
+  rule-book-backend:
+    image: ghcr.io/mariannefeng/rule-book-backend:main-c12e4f7
+    container_name: rule-book-backend
+    restart: unless-stopped
+    expose:
+      - "8080"
+    secrets:
+      - r2_account_id
+      - r2_access_key_id
+      - r2_access_key_secret
+    environment:
+      - R2_BUCKET=rulebook
+      - R2_ACCOUNT_ID_FILE=/run/secrets/r2_account_id
+      - R2_ACCESS_KEY_ID_FILE=/run/secrets/r2_access_key_id
+      - R2_ACCESS_KEY_SECRET_FILE=/run/secrets/r2_access_key_secret
+    networks:
+      - proxy-network
+
+secrets:
+  r2_account_id:
+    file: ./secrets/r2_account_id
+  r2_access_key_id:
+    file: ./secrets/r2_access_key_id
+  r2_access_key_secret:
+    file: ./secrets/r2_access_key_secret
+
+networks:
+  proxy-network:
+    external: true

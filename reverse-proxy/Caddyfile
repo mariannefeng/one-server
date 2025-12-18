@@ -7,13 +7,12 @@ api.high-five-me.com {
     }
 }
 
-# Rule Book API (uncomment when ready)
-# api.rule-book.org {
-#     reverse_proxy rule-book-backend:8080 {
-#         header_up Host {host}
-#         header_up X-Real-IP {remote}
-#         header_up X-Forwarded-For {remote}
-#         header_up X-Forwarded-Proto {scheme}
-#     }
-# }
+api.rule-book.org {
+    reverse_proxy rule-book-backend:8080 {
+        header_up Host {host}
+        header_up X-Real-IP {remote}
+        header_up X-Forwarded-For {remote}
+        header_up X-Forwarded-Proto {scheme}
+    }
+}
 
