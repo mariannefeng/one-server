@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   backend:
-    image: ghcr.io/mariannefeng/high-five-me-backend:main-f4a5688
+    image: ghcr.io/mariannefeng/high-five-me-backend:latest
     restart: unless-stopped
     container_name: high-five-me-backend
     expose:
