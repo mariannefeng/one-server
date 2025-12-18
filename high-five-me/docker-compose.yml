@@ -1,0 +1,18 @@
+version: "3.8"
+
+services:
+  backend:
+    image: ghcr.io/mariannefeng/high-five-me-backend:main-f4a5688
+    restart: unless-stopped
+    container_name: high-five-me-backend
+    expose:
+      - "8080" # Only expose internally, Caddy handles external access
+    environment:
+      - FRONTEND_URL=https://high-five-me.com
+    networks:
+      - proxy-network
+
+networks:
+  proxy-network:
+    external: true
+    name: proxy-network
