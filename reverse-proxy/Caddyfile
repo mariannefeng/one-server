@@ -1,5 +1,5 @@
 api.high-five-me.com {
-    reverse_proxy high-five-me-backend:8080 {
+    reverse_proxy high-five-me-backend:5000 {
         header_up Host {host}
         header_up X-Real-IP {remote}
         header_up X-Forwarded-For {remote}

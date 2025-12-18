@@ -6,7 +6,7 @@ services:
     restart: unless-stopped
     container_name: high-five-me-backend
     expose:
-      - "8080" # Only expose internally, Caddy handles external access
+      - "5000" # Only expose internally, Caddy handles external access
     environment:
       - FRONTEND_URL=https://high-five-me.com
     networks:
