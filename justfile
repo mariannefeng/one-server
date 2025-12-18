@@ -7,9 +7,9 @@ up service:
 setup-auto-update:
   #!/usr/bin/env bash
   set -e
-  # Justfile recipes run from the directory containing the justfile
   REPO_ROOT="$(pwd)"
   UPDATE_SCRIPT_ABS="$REPO_ROOT/scripts/auto-update.sh"
+  
   CRON_LOG="/var/log/auto-update.log"
   CRON_CMD="0 */6 * * * $UPDATE_SCRIPT_ABS >> $CRON_LOG 2>&1"
   
