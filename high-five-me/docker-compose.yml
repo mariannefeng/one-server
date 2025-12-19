@@ -7,6 +7,15 @@ services:
       - "5000" # Only expose internally, Caddy handles external access
     environment:
       - FRONTEND_URL=https://high-five-me.com
+      # Aggressively limit Node.js heap size for 512MB server
+      - NODE_OPTIONS=--max-old-space-size=96
+    # Set strict memory limits for constrained server
+    deploy:
+      resources:
+        limits:
+          memory: 192M
+        reservations:
+          memory: 64M
     networks:
       - proxy-network
 
