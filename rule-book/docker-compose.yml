@@ -9,6 +9,15 @@ services:
       - ./secrets/.env
     environment:
       - R2_BUCKET=rulebook
+      # Aggressively limit Node.js heap size for 512MB server
+      - NODE_OPTIONS=--max-old-space-size=96
+    # Set strict memory limits for constrained server
+    deploy:
+      resources:
+        limits:
+          memory: 192M
+        reservations:
+          memory: 64M
     networks:
       - proxy-network
 
