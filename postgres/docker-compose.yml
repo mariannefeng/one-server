@@ -18,6 +18,13 @@ services:
       interval: 10s
       timeout: 5s
       retries: 5
+    # Set memory limits for constrained server
+    deploy:
+      resources:
+        limits:
+          memory: 128M
+        reservations:
+          memory: 32M
 
 volumes:
   postgres_data:
