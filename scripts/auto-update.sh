@@ -22,6 +22,11 @@ cd "$BASE_DIR/high-five-me"
 docker compose pull backend
 docker compose up -d backend
 
+echo "Checking kindle-hax"
+cd "$BASE_DIR/kindle-hax"
+docker compose pull backend
+docker compose up -d backend
+
 echo "Cleaning up unused Docker containers, images, and volumes..."
 docker container prune -f
 docker image prune -a -f
