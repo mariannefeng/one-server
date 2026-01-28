@@ -1,10 +1,7 @@
-# todo:
+### so I don't forget how it all works
 
-# done:
+ssh-ing onto the server is protected by tailscale, to ssh run
 
-- deploy rulebook at api.rule-book.org
-- setup cpu/memory dash
-- deploy high five me backend at api.high-five-me.com
-- buy high-five-me domain
-- get caddy setup
-- setup auto update
+`ssh -i ~/.ssh/id_rsa_mf root@one-server`
+
+there's an auto-update script in scripts that can be executed to manually update all running services and cleanup docker
