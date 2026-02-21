@@ -27,6 +27,11 @@ cd "$BASE_DIR/kindle-hax"
 docker compose pull backend
 docker compose up -d backend
 
+echo "Checking namu-and-rocky"
+cd "$BASE_DIR/namuandrocky"
+docker compose pull namu-and-rocky-backend
+docker compose up -d namu-and-rocky-backend
+
 echo "Cleaning up unused Docker containers, images, and volumes..."
 docker container prune -f
 docker image prune -a -f
