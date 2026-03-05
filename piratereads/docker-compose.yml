@@ -1,0 +1,23 @@
+services:
+  piratereads:
+    image: ghcr.io/mariannefeng/piratereads:latest
+    container_name: piratereads
+    restart: unless-stopped
+    expose:
+      - "8080"
+    environment:
+      # Aggressively limit Node.js heap size for 512MB server
+      - NODE_OPTIONS=--max-old-space-size=96
+    # Set strict memory limits for constrained server
+    deploy:
+      resources:
+        limits:
+          memory: 192M
+        reservations:
+          memory: 64M
+    networks:
+      - proxy-network
+
+networks:
+  proxy-network:
+    external: true

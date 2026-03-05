@@ -32,6 +32,11 @@ cd "$BASE_DIR/namuandrocky"
 docker compose pull namuandrocky-backend
 docker compose up -d namuandrocky-backend
 
+echo "Checking piratereads"
+cd "$BASE_DIR/piratereads"
+docker compose pull piratereads
+docker compose up -d piratereads
+
 echo "Cleaning up unused Docker containers, images, and volumes..."
 docker container prune -f
 docker image prune -a -f

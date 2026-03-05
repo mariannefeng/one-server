@@ -25,6 +25,15 @@ api.namuandrocky.com {
     }
 }
 
+api.piratereads.com {
+    reverse_proxy piratereads:8080 {
+        header_up Host {host}
+        header_up X-Real-IP {remote}
+        header_up X-Forwarded-For {remote}
+        header_up X-Forwarded-Proto {scheme}
+    }
+}
+
 kindle.mariannefeng.com {
     reverse_proxy kindle-hax:3000 {
         header_up Host {host}
