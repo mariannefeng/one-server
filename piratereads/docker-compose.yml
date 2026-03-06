@@ -5,6 +5,8 @@ services:
     restart: unless-stopped
     expose:
       - "8080"
+    env_file:
+      - ./secrets/.env
     environment:
       # Aggressively limit Node.js heap size for 512MB server
       - NODE_OPTIONS=--max-old-space-size=96
