@@ -37,6 +37,11 @@ cd "$BASE_DIR/piratereads"
 docker compose pull piratereads
 docker compose up -d piratereads
 
+echo "Checking buforoulette"
+cd "$BASE_DIR/buforoulette"
+docker compose pull buforoulette
+docker compose up -d buforoulette
+
 echo "Cleaning up unused Docker containers, images, and volumes..."
 docker container prune -f
 docker image prune -a -f
