@@ -1,0 +1,20 @@
+services:
+  backend:
+    image: ghcr.io/mariannefeng/buforoulette:latest
+    restart: unless-stopped
+    container_name: buforoulette
+    expose:
+      - "5000" # Only expose internally, Caddy handles external access
+    deploy:
+      resources:
+        limits:
+          memory: 192M
+        reservations:
+          memory: 64M
+    networks:
+      - proxy-network
+
+networks:
+  proxy-network:
+    external: true
+    name: proxy-network
