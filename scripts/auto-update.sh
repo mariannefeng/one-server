@@ -39,8 +39,8 @@ docker compose up -d piratereads
 
 echo "Checking buforoulette"
 cd "$BASE_DIR/buforoulette"
-docker compose pull buforoulette
-docker compose up -d buforoulette
+docker compose pull backend
+docker compose up -d backend
 
 echo "Cleaning up unused Docker containers, images, and volumes..."
 docker container prune -f
