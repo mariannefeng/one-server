@@ -1,0 +1,22 @@
+services:
+  memoeyez:
+    image: ghcr.io/mariannefeng/memoeyez:latest
+    container_name: memoeyez
+    restart: unless-stopped
+    expose:
+      - "8080"
+    env_file:
+      - ./secrets/.env
+    # Set strict memory limits for constrained server
+    deploy:
+      resources:
+        limits:
+          memory: 192M
+        reservations:
+          memory: 64M
+    networks:
+      - proxy-network
+
+networks:
+  proxy-network:
+    external: true

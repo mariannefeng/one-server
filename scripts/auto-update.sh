@@ -22,25 +22,26 @@ cd "$BASE_DIR/high-five-me"
 docker compose pull backend
 docker compose up -d backend
 
-echo "Checking kindle-hax"
-cd "$BASE_DIR/kindle-hax"
-docker compose pull backend
-docker compose up -d backend
-
 echo "Checking namu-and-rocky"
 cd "$BASE_DIR/namuandrocky"
 docker compose pull namuandrocky-backend
 docker compose up -d namuandrocky-backend
+
+echo "Checking memoeyez"
+cd "$BASE_DIR/memoeyez"
+docker compose pull memoeyez
+docker compose up -d memoeyez
 
 echo "Checking piratereads"
 cd "$BASE_DIR/piratereads"
 docker compose pull piratereads
 docker compose up -d piratereads
 
-echo "Checking buforoulette"
-cd "$BASE_DIR/buforoulette"
-docker compose pull backend
-docker compose up -d backend
+# BACKEND DOESN'T WORK RIGHT NOW. FIXXXXXX
+# echo "Checking buforoulette"
+# cd "$BASE_DIR/buforoulette"
+# docker compose pull backend
+# docker compose up -d backend
 
 echo "Cleaning up unused Docker containers, images, and volumes..."
 docker container prune -f
