@@ -4,7 +4,7 @@ services:
     container_name: memoeyez
     restart: unless-stopped
     expose:
-      - "8080"
+      - "3000"
     env_file:
       - ./secrets/.env
     # Set strict memory limits for constrained server
