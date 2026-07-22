@@ -37,11 +37,10 @@ cd "$BASE_DIR/piratereads"
 docker compose pull piratereads
 docker compose up -d piratereads
 
-# BACKEND DOESN'T WORK RIGHT NOW. FIXXXXXX
-# echo "Checking buforoulette"
-# cd "$BASE_DIR/buforoulette"
-# docker compose pull backend
-# docker compose up -d backend
+echo "Checking buforoulette"
+cd "$BASE_DIR/buforoulette"
+docker compose pull backend
+docker compose up -d backend
 
 echo "Cleaning up unused Docker containers, images, and volumes..."
 docker container prune -f
